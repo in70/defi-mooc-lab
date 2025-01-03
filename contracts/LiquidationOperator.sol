@@ -210,8 +210,7 @@ contract LiquidationOperator is IUniswapV2Callee {
         // console.log(WBTC.balanceOf(0xBb2b8038a1640196FbE3e38816F3e67Cba72D940));
         require(healthFactor < (10 ** health_factor_decimals), "Liquidator: position not liquidatable");
         // 1. get the target user account data & make sure it is liquidatable
-        //    *** Your code here ***
-        
+        //    *** Your code here ***        
 
         // 2. call flash swap to liquidate the target user
         // based on https://etherscan.io/tx/0xac7df37a43fab1b130318bbb761861b8357650db2e2c6493b73d6da3d9581077
@@ -252,7 +251,7 @@ contract LiquidationOperator is IUniswapV2Callee {
         //    *** Your code here ***
         uint256 wbtc_balance = WBTC.balanceOf(address(this));
         WBTC.transfer(address(WBTC_WETH_SushiV2_LP), wbtc_balance);
-        uint256 amountOut = getAmountOut( wbtc_balance, token3, token4);
+        uint256 amountOut = getAmountOut(wbtc_balance, token3, token4);
 
 
         // 2.3 repay
